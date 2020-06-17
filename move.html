@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<style>
+    #container {
+        width: 730px;
+        height: 730px;
+        position: relative;
+        background: grey;
+    }
+    
+    #animate {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        background-color: rgb(73, 73, 199);
+    }
+</style>
+
+<body>
+
+    <p><button onclick="myMove()">Click Me</button></p>
+
+    <div id="container">
+        <div id="animate"></div>
+    </div>
+
+    <script>
+        function myMove() {
+            var elem = document.getElementById("animate");
+            var pos = 0;
+            var id = setInterval(frame, 7);
+
+            function frame() {
+                if (pos == 700) {
+                    clearInterval(id);
+                } else {
+                    pos++;
+                    elem.style.top = pos + "px";
+                    elem.style.left = pos + "px";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
